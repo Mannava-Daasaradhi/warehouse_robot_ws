@@ -3,8 +3,8 @@
 <package format="3">
   <name>warehouse_robot</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="daasaradhimannava@gmail.com">mannava</maintainer>
+  <description>Warehouse Robot Navigation Project</description>
+  <maintainer email="user@todo.todo">user</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -12,6 +12,11 @@
   <depend>rclcpp</depend>
   <depend>xacro</depend>
   <depend>urdf</depend>
+  <depend>robot_state_publisher</depend>
+  
+  <exec_depend>ros_gz</exec_depend> 
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
