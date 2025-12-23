@@ -34,33 +34,28 @@ def generate_launch_description():
 
 
     # Launch Gazebo Harmonic
-    # We use the standard ros_gz_sim launch file
-    # '-r' means run immediately (don't pause at start)
-    # 'empty.sdf' is the default empty world
+    # We now point to our custom world file
+    world_path = os.path.join(pkg_share, 'worlds', 'warehouse.sdf')
+    
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')
         ),
-        launch_arguments={'gz_args': '-r empty.sdf'}.items(),
+        launch_arguments={'gz_args': f'-r {world_path}'}.items(),
     )
 
 
     # Spawn the robot
-    # We use the 'create' node from ros_gz_sim
     spawn_entity = Node(
         package='ros_gz_sim',
         executable='create',
         arguments=['-topic', 'robot_description',
                    '-name', 'my_bot',
-                   '-z', '0.5'], # Spawn 0.5m high to drop down
+                   '-z', '0.5'], 
         output='screen'
     )
 
     # Bridge
-    # This connects ROS 2 topics to Gazebo topics
-    # ] means ROS -> Gazebo
-    # [ means Gazebo -> ROS
-    # @ means bidirectional
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
