@@ -23,34 +23,58 @@ def generate_launch_description():
     robot_description_raw = xacro.process_file(xacro_file).toxml()
 
 
-    # Configure the node
+    # Configure the Robot State Publisher node
     node_robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         output='screen',
         parameters=[{'robot_description': robot_description_raw,
-                     'use_sim_time': True}] # IMPORTANT: use_sim_time tells ROS to use Gazebo's clock
+                     'use_sim_time': True}]
     )
 
 
-    # Include the Gazebo launch file, provided by the gazebo_ros package
+    # Launch Gazebo Harmonic
+    # We use the standard ros_gz_sim launch file
+    # '-r' means run immediately (don't pause at start)
+    # 'empty.sdf' is the default empty world
     gazebo = IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
-             )
+        PythonLaunchDescriptionSource(
+            os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')
+        ),
+        launch_arguments={'gz_args': '-r empty.sdf'}.items(),
+    )
 
 
-    # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have one robot.
-    spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
-                        arguments=['-topic', 'robot_description',
-                                   '-entity', 'my_bot'],
-                        output='screen')
+    # Spawn the robot
+    # We use the 'create' node from ros_gz_sim
+    spawn_entity = Node(
+        package='ros_gz_sim',
+        executable='create',
+        arguments=['-topic', 'robot_description',
+                   '-name', 'my_bot',
+                   '-z', '0.5'], # Spawn 0.5m high to drop down
+        output='screen'
+    )
 
-
+    # Bridge
+    # This connects ROS 2 topics to Gazebo topics
+    # ] means ROS -> Gazebo
+    # [ means Gazebo -> ROS
+    # @ means bidirectional
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+                   '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
+                   '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
+                   '/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V'],
+        output='screen'
+    )
 
     # Run them all together
     return LaunchDescription([
-        gazebo,
         node_robot_state_publisher,
+        gazebo,
         spawn_entity,
+        bridge,
     ])
