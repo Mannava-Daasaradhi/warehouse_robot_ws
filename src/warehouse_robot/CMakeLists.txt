@@ -18,7 +18,14 @@ install(DIRECTORY
   worlds
   models
   maps
+  rviz
+  config
   DESTINATION share/${PROJECT_NAME}
+)
+install(PROGRAMS
+  scripts/random_walk.py
+  scripts/mission.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

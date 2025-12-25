@@ -1,0 +1,1 @@
+/home/mannava/warehouse_robot_ws/src/warehouse_robot/scripts/random_walk.py

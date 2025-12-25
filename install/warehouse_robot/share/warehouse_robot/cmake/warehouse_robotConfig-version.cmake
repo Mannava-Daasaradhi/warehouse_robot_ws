@@ -1,0 +1,1 @@
+/home/mannava/warehouse_robot_ws/build/warehouse_robot/ament_cmake_core/warehouse_robotConfig-version.cmake

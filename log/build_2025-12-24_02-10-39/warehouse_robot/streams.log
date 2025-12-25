@@ -1,0 +1,45 @@
+[0.006s] Invoking command in '/home/mannava/warehouse_robot_ws/build/warehouse_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/mannava/warehouse_robot_ws/build/warehouse_robot -- -j32 -l32
+[0.025s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.407s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.411s] -- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.425s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.429s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.434s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.440s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.468s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.469s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.520s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.552s] -- Found urdf: 2.10.0 (/opt/ros/jazzy/share/urdf/cmake)
+[1.557s] -- Found xacro: 2.1.1 (/opt/ros/jazzy/share/xacro/cmake)
+[1.557s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.739s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.739s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.739s] -- Added test 'lint_cmake' to check CMake code style
+[1.739s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.740s] -- Added test 'xmllint' to check XML markup files
+[1.740s] -- Configuring done (1.7s)
+[1.742s] -- Generating done (0.0s)
+[1.743s] -- Build files have been written to: /home/mannava/warehouse_robot_ws/build/warehouse_robot
+[1.770s] Invoked command in '/home/mannava/warehouse_robot_ws/build/warehouse_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/mannava/warehouse_robot_ws/build/warehouse_robot -- -j32 -l32
+[1.785s] Invoking command in '/home/mannava/warehouse_robot_ws/build/warehouse_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/mannava/warehouse_robot_ws/build/warehouse_robot
+[1.794s] -- Install configuration: ""
+[1.795s] -- Execute custom install script
+[1.795s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/launch/launch_sim.launch.py
+[1.795s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/urdf/gazebo_control.xacro
+[1.796s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/urdf/robot.urdf.xacro
+[1.796s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/ament_index/resource_index/package_run_dependencies/warehouse_robot
+[1.796s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/ament_index/resource_index/parent_prefix_path/warehouse_robot
+[1.796s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/environment/ament_prefix_path.sh
+[1.796s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/environment/ament_prefix_path.dsv
+[1.797s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/environment/path.sh
+[1.797s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/environment/path.dsv
+[1.797s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/local_setup.bash
+[1.797s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/local_setup.sh
+[1.797s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/local_setup.zsh
+[1.797s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/local_setup.dsv
+[1.797s] -- Symlinking: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/package.dsv
+[1.809s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/ament_index/resource_index/packages/warehouse_robot
+[1.809s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/cmake/warehouse_robotConfig.cmake
+[1.810s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/cmake/warehouse_robotConfig-version.cmake
+[1.810s] -- Up-to-date symlink: /home/mannava/warehouse_robot_ws/install/warehouse_robot/share/warehouse_robot/package.xml
+[1.813s] Invoked command in '/home/mannava/warehouse_robot_ws/build/warehouse_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/mannava/warehouse_robot_ws/build/warehouse_robot
